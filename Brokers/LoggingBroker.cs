@@ -1,5 +1,4 @@
 ﻿using System;
-
 namespace Phonebook.Crud.Brokers
 {
     internal class LoggingBroker : ILoggingBroker
