@@ -61,7 +61,6 @@ namespace Phonebook.Crud.Services.Contacts
             {
                 return this.storageBroker.DeleteContactById(id);
             }
-
         }
 
         private Contact CreateAndLogInvalidContact()
@@ -102,7 +101,5 @@ namespace Phonebook.Crud.Services.Contacts
                 return this.storageBroker.UpdateContact(contact);
             }
         }
-
-
     }
 }
