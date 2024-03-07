@@ -28,9 +28,9 @@ namespace Phonebook.Crud.Brokers.Storages
             int contactLength = contactLines.Length;
             Contact[] contacts = new Contact[contactLength];
 
-            for (int iterator = 0; iterator < contactLength; iterator++)
+            for (int iteration = 0; iteration < contactLength; iteration++)
             {
-                string contactLine = contactLines[iterator];
+                string contactLine = contactLines[iteration];
                 string[] contactProperties = contactLine.Split("*");
 
                 Contact contact = new Contact
@@ -40,7 +40,7 @@ namespace Phonebook.Crud.Brokers.Storages
                     Phone = contactProperties[2]
                 };
 
-                contacts[iterator] = contact;
+                contacts[iteration] = contact;
             }
 
             return contacts;
@@ -52,9 +52,9 @@ namespace Phonebook.Crud.Brokers.Storages
             int contactLength = contactLines.Length;
             File.WriteAllText(FilePath, String.Empty);
 
-            for (int iterator = 0; iterator < contactLength; iterator++)
+            for (int iteration = 0; iteration < contactLength; iteration++)
             {
-                string contactLine = contactLines[iterator];
+                string contactLine = contactLines[iteration];
                 string[] contactProperties = contactLine.Split("*");
 
                 if (contactProperties[0] == contact.Id.ToString())
@@ -77,9 +77,9 @@ namespace Phonebook.Crud.Brokers.Storages
             int contactLength = contactLines.Length;
             File.WriteAllText(FilePath, String.Empty);
 
-            for (int iterator = 0; iterator < contactLength; iterator++)
+            for (int iteration = 0; iteration < contactLength; iteration++)
             {
-                string contactLine = contactLines[iterator];
+                string contactLine = contactLines[iteration];
                 string[] contactProperties = contactLine.Split("*");
 
                 if (contactProperties[0] == id.ToString())
@@ -91,7 +91,6 @@ namespace Phonebook.Crud.Brokers.Storages
                     File.AppendAllText(FilePath, contactLine);
                 }
             }
-
             return isDeleted;
         }
 
