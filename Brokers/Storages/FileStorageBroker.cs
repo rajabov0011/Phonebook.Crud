@@ -28,9 +28,9 @@ namespace Phonebook.Crud.Brokers.Storages
             int contactLength = contactLines.Length;
             Contact[] contacts = new Contact[contactLength];
 
-            for (int iteration = 0; iteration < contactLength; iteration++)
+            for (int iterator = 0; iterator < contactLength; iterator++)
             {
-                string contactLine = contactLines[iteration];
+                string contactLine = contactLines[iterator];
                 string[] contactProperties = contactLine.Split("*");
 
                 Contact contact = new Contact
@@ -40,7 +40,7 @@ namespace Phonebook.Crud.Brokers.Storages
                     Phone = contactProperties[2]
                 };
 
-                contacts[iteration] = contact;
+                contacts[iterator] = contact;
             }
 
             return contacts;
@@ -52,9 +52,9 @@ namespace Phonebook.Crud.Brokers.Storages
             int contactLength = contactLines.Length;
             File.WriteAllText(FilePath, String.Empty);
 
-            for (int iteration = 0; iteration < contactLength; iteration++)
+            for (int iterator = 0; iterator < contactLength; iterator++)
             {
-                string contactLine = contactLines[iteration];
+                string contactLine = contactLines[iterator];
                 string[] contactProperties = contactLine.Split("*");
 
                 if (contactProperties[0] == contact.Id.ToString())
@@ -77,9 +77,9 @@ namespace Phonebook.Crud.Brokers.Storages
             int contactLength = contactLines.Length;
             File.WriteAllText(FilePath, String.Empty);
 
-            for (int iteration = 0; iteration < contactLength; iteration++)
+            for (int iterator = 0; iterator < contactLength; iterator++)
             {
-                string contactLine = contactLines[iteration];
+                string contactLine = contactLines[iterator];
                 string[] contactProperties = contactLine.Split("*");
 
                 if (contactProperties[0] == id.ToString())
